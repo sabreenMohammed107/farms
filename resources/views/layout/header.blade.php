@@ -21,9 +21,9 @@
                 </div>
                 <!--end::Aside Toggle-->
                 <!--begin::Logo-->
-                <a href="../dist/index.html" class="d-lg-none">
+                <a href="#" class="d-lg-none">
 
-                    <img alt="Logo" src="{{asset(' website_assets/assets/img/logo.png')}}" class="mh-40px" />
+                    <img alt="Logo" src="{{asset('website_assets/assets/img/logo.png')}}" class="mh-40px" />
                 </a>
                 <!--end::Logo-->
                 <!--begin::Aside toggler-->
