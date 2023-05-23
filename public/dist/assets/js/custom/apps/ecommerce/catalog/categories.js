@@ -52,12 +52,12 @@ var KTAppEcommerceCategories = function() {
                 const categoryId = parent.querySelector('[data-kt-ecommerce-category-filter="category_id"]').value;
                 // SweetAlert2 pop up --- official docs reference: https://sweetalert2.github.io/
                 Swal.fire({
-                    text: "Are you sure you want to delete " + categoryName + "?",
+                    text: " هل انت متأكد من حذف" + categoryName + "?",
                     icon: "warning",
                     showCancelButton: true,
                     buttonsStyling: false,
-                    confirmButtonText: "Yes, delete!",
-                    cancelButtonText: "No, cancel",
+                    confirmButtonText: "نعم, احذف!",
+                    cancelButtonText: "لا, الغاء",
                     customClass: {
                         confirmButton: "btn fw-bold btn-danger",
                         cancelButton: "btn fw-bold btn-active-light-primary"
@@ -84,10 +84,10 @@ var KTAppEcommerceCategories = function() {
                         // });
                     } else if (result.dismiss === 'cancel') {
                         Swal.fire({
-                            text: categoryName + " was not deleted.",
+                            text: categoryName + " لم يتم حذف.",
                             icon: "error",
                             buttonsStyling: false,
-                            confirmButtonText: "Ok, got it!",
+                            confirmButtonText: "حسنًا ، حسنًا!",
                             customClass: {
                                 confirmButton: "btn fw-bold btn-primary",
                             }
