@@ -169,7 +169,7 @@
                                             class="menu-link px-3">عرض</a>
                                     </td>
                                     <td class="text-end pe-0" data-order="15">
-                                        <a href="{{ route('customers.show', $row->id) }}" class="menu-link px-3">تعديل</a>
+                                        <a href="{{ route('customers.edit', $row->id) }}" class="menu-link px-3">تعديل</a>
                                     </td>
                                     <td class="text-end pe-0" data-order="15">
                                         <a href="#" class="menu-link px-3"

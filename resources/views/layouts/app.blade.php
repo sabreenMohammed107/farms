@@ -28,6 +28,11 @@
                    <img alt="Logo" src="{{ asset('img/logo.PNG') }}" class="max-h-50px logo-default "
                     style="height: 120px" />
                 </a>
+                <div class="row" style="width: 70%">
+                    <div class="col-md-8 offset-md-2">
+                      <h2 style="color:#02572f ; font-weight: 700">مزارع جمال جمعة</h2>
+                    </div>
+                  </div>
                 {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button> --}}
