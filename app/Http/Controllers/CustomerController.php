@@ -186,6 +186,8 @@ if($customers->count() > 0){
 
                 $customer->status = '0' ;
                 // dd($request->get('status'));
+            }else{
+                $customer->status = '1' ;
             }
 
             $customer->address =  $request->address;
