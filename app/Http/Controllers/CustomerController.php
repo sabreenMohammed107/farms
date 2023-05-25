@@ -121,20 +121,25 @@ class CustomerController extends Controller
 
         $customers = Customer::orderBy("created_at", "Desc")->get();
 
-        $Company=Customer::where('id',1)->first();
-        $data = [
-            'customers' => $customers,
-            'Title' =>'تقرير العملاء',
-            'Today' => date('Y-m-d'),
-            'Logo'  => $Company->company_logo,
-            'Company' => $Company,
-            'User'  =>  Auth::user(),
-        ];
-        $pdf = PDF::loadView('admin.customers.report', $data);
-        $pdf->allow_charset_conversion = false;
-        $pdf->autoScriptToLang = true;
-        $pdf->autoLangToFont = true;
-        return $pdf->stream('suppliers.pdf');
+if($customers->count() > 0){
+    $data = [
+        'customers' => $customers,
+        'Title' =>'تقرير العملاء',
+        'Today' => date('Y-m-d'),
+
+
+        'User'  =>  Auth::user(),
+    ];
+    $pdf = PDF::loadView('admin.customers.report', $data);
+    $pdf->allow_charset_conversion = false;
+    $pdf->autoScriptToLang = true;
+    $pdf->autoLangToFont = true;
+    return $pdf->stream('suppliers.pdf');
+}else{
+    return redirect()->route($this->routeName . 'index')->with('flash_del','لا توجد بيانات خاصه بالعملاء');
+
+}
+
 
 
     }

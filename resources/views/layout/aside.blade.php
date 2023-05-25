@@ -44,7 +44,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">لوحة التحكم</span>
+                        <span class="menu-title">أقسام النظام</span>
                         <span class="menu-arrow"></span>
                     </span>
 

@@ -5,7 +5,7 @@
         <!--begin::Container-->
         <div class="container-fluid d-flex align-items-stretch justify-content-between">
             <!--begin::Logo bar-->
-            <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
+            <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-1">
                 <!--begin::Aside Toggle-->
                 <div class="d-flex align-items-center d-lg-none">
                     <div class="btn btn-icon btn-active-color-primary ms-n2 me-1" id="kt_aside_toggle">
@@ -41,7 +41,7 @@
                 <!--end::Aside toggler-->
                 <div class="row px-3" style="width: 100%">
                     <div class="col-12">
-                      <h2 style="color:#02572f ; font-weight: 700">مزارع جمال جمعة</h2>
+                      <h2 style="color:#02572f ; font-weight: 700;text-align: left;">مزارع جمال جمعة</h2>
                     </div>
                   </div>
             </div>
@@ -52,12 +52,12 @@
                 <div class="d-flex align-items-stretch me-1">
 
                     <!--begin::Search-->
-                     <div id="kt_header_search" class="d-flex align-items-center w-100 w-lg-300px">
+                     {{-- <div id="kt_header_search" class="d-flex align-items-center w-100 w-lg-300px"> --}}
 
                         <!--end::Tablet and mobile search toggle-->
 
 
-                    </div>
+                    {{-- </div> --}}
                     <!--end::Search-->
                 </div>
                 <!--end::Search-->

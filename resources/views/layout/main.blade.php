@@ -40,7 +40,7 @@ License: For each use you must have a valid license purchased only from above li
         <div class="toast show "  role="alert" aria-live="assertive" aria-atomic="true">
          <div class="toast-header">
              <span class="svg-icon svg-icon-2 svg-icon-primary me-3"></span>
-             <strong class="me-auto">راائع !</strong>
+             <strong class="me-auto">الحاله !</strong>
 
              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
          </div>
