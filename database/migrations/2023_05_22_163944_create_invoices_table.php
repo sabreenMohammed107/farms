@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->string('code')->nullable();
-            $table->date('orer_date')->nullable();
+            $table->date('inv_date')->nullable();
             $table->enum('status', [0,1])->default(1)->comment('0 >> inactive ,1>>active');
             $table->enum('canceled', [0,1])->default(0)->comment('0 >> notCancel ,1>>cancel');
 

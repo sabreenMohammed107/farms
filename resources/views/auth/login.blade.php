@@ -53,11 +53,16 @@
                         </div> --}}
 
                         <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-3 offset-md-4">
+                                <button type="submit" class="btn btn-primary my-2">
                                   تسجيل دخول
                                 </button>
-
+                            </div>
+                                <div class="col-md-4 ">
+                                    <button type="reset" class="btn btn-danger px-4 my-2">
+                                     إلغاء
+                                    </button>
+                                </div>
                                 @if(Session::has('error'))
 
                                 <div class="alert alert-danger alert-dismissible fade show mt-2" style="direction: rtl" role="alert">
@@ -80,7 +85,7 @@
                       </ul>
                     </div>
                     @endif
-                            </div>
+                            {{-- </div> --}}
                         </div>
                     </form>
                 </div>

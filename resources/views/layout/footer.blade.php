@@ -5,7 +5,7 @@
         <!--begin::Copyright-->
         <div class="text-dark order-2 order-md-1" style="margin: auto">
             <span class="text-muted fw-bold me-2">2023©</span>
-            <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Senior Consulting </a>
+            <a href="#" target="_blank" class="text-gray-800 text-hover-primary">Senior Consulting </a>
         </div>
         <!--end::Copyright-->
         <!--begin::Menu-->

@@ -83,7 +83,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="fs-6 fw-bold form-label ">
-                                        <option value="">اختر المحافظه</option>
+                                        <option value="">اختر المحافظة</option>
                                     </label>
                                     <!--end::Label-->
                                     <select  class="form-select form-select-solid dynamic"

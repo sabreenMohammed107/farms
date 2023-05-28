@@ -18,8 +18,18 @@
 
    <!-- Styles -->
    <link href="{{ asset('css/appAr.css') }}" rel="stylesheet">
+   <style>
+    #containerfooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+ }
+
+    </style>
 </head>
-<body style="direction: rtl">
+<body style="direction: rtl;background: #e4f3d2;">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -47,9 +57,16 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="background: #e4f3d2;">
             @yield('content')
         </main>
+
+    </div>
+    <div id="containerfooter">
+        <div class="text-dark order-2 order-md-1" style="margin: auto;padding:20px 0;text-align: center">
+            <span class="text-muted fw-bold me-2">2023©</span>
+            <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Senior Consulting </a>
+        </div>
     </div>
 </body>
 </html>

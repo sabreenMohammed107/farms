@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('sale_orders', function (Blueprint $table) {
             $table->id();
             $table->string('code')->nullable();
-            $table->date('orer_date')->nullable();
+            $table->date('so_date')->nullable();
             $table->text('description')->nullable();
             $table->enum('status', [0,1])->default(1)->comment('0 >> inactive ,1>>active');
             $table->unsignedBigInteger('invoice_id')->nullable();
