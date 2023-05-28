@@ -61,7 +61,12 @@
                         <!--begin::Add customer-->
                         <!--begin::Add product-->
                         <!--end::Add product-->
-                        <a href="{{ route('customers.show',1) }}" target="_blank" class="btn btn-primary">طباعة</a>
+
+                        <a href="{{ route('customers.show',1) }}"
+                        @if($rows->count() <= 0)
+                        disabled
+                        @endif
+                        target="_blank" class="btn btn-primary">طباعة</a>
 
                         <!--end::Add customer-->
                     </div>

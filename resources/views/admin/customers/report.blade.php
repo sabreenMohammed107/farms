@@ -155,7 +155,7 @@ tbody tr td{
                             </div>
                             <div class="off_name">
                                 <span>
-                               مزارع جمال حمدان
+                               مزارع جمال جمعة
                                 </span>
                             </div>
                         </span>
