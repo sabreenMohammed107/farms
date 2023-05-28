@@ -16,7 +16,9 @@ var KTAppEcommerceCategories = function() {
             'pageLength': 10,
             'columnDefs': [
                 { orderable: false, targets: 0 }, // Disable ordering on column 0 (checkbox)
-                { orderable: false, targets: 3 }, // Disable ordering on column 3 (actions)
+                { orderable: false, targets: 7 }, // Disable ordering on column 3 (actions)
+                { orderable: false, targets: 8 },
+                { orderable: false, targets: 9 },
             ]
         });
 
@@ -57,11 +59,11 @@ var KTAppEcommerceCategories = function() {
                     icon: "warning",
                     showCancelButton: true,
                     buttonsStyling: false,
-                    confirmButtonText: "نعم, احذف!",
-                    cancelButtonText: "لا, الغاء",
+                    confirmButtonText: " احذف!",
+                    cancelButtonText: " الغاء",
                     customClass: {
                         confirmButton: "btn fw-bold btn-danger",
-                        cancelButton: "btn fw-bold btn-active-light-primary"
+                        cancelButton: "btn fw-bold btn-primary btn-active-light-primary"
                     }
                 }).then(function(result) {
                     if (result.value) {
@@ -85,7 +87,7 @@ var KTAppEcommerceCategories = function() {
                         // });
                     } else if (result.dismiss === 'cancel') {
                         Swal.fire({
-                            text: categoryName + " لم يتم حذف.",
+                            text: " لم يتم حذف." +" "+ categoryName ,
                             icon: "error",
                             buttonsStyling: false,
                             confirmButtonText: "حسنًا ، حسنًا!",

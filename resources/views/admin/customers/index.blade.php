@@ -1,5 +1,15 @@
 @extends('layout.main')
-
+@section('add-style')
+    <style>
+        .isDisabled {
+            color: currentColor;
+            cursor: not-allowed;
+            opacity: 0.5;
+            text-decoration: none;
+            pointer-events: none;
+        }
+    </style>
+@endsection
 @section('breadcrumb')
     <div class="toolbar" id="kt_toolbar">
         <div class="container-fluid d-flex flex-stack flex-wrap flex-sm-nowrap">
@@ -62,11 +72,9 @@
                         <!--begin::Add product-->
                         <!--end::Add product-->
 
-                        <a href="{{ route('customers.show',1) }}"
-                        @if($rows->count() <= 0)
-                        disabled
-                        @endif
-                        target="_blank" class="btn btn-primary">طباعة</a>
+                        <a href="{{ route('customers.show', 1) }}" disabled target="_blank"
+                            class="btn btn-primary
+                        @if ($rows->isEmpty()) isDisabled @endif ">طباعة</a>
 
                         <!--end::Add customer-->
                     </div>
@@ -82,26 +90,41 @@
                         <thead>
                             <!--begin::Table row-->
                             <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-                                <th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1" aria-label="
+                                <th class="w-10px pe-2 sorting_disabled" rowspan="1" colspan="1"
+                                    aria-label=" " style="width: 29.25px;">
+                                    <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
+                                        <input class="form-check-input" style="display: none" type="checkbox"
+                                            data-kt-check="true"
+                                            data-kt-check-target="#kt_ecommerce_category_table .form-check-input"
+                                            value="1">
+                                    </div>
+                                </th>
 
+                                <th class="min-w-250px sorting" tabindex="0" aria-controls="kt_ecommerce_category_table"
+                                    rowspan="1" colspan="1" aria-label="العميل: activate to sort column ascending">
+                                    اسم العميل</th>
 
+                                <th class="text-end min-w-70px sorting sorting_desc" tabindex="0"
+                                    aria-controls="kt_ecommerce_category_table" rowspan="1" colspan="1"
+                                    aria-label="Category Type: activate to sort column ascending" aria-sort="descending">
+                                    كود العميل</th>
+                                <th class="text-end min-w-70px sorting sorting_desc" tabindex="0"
+                                aria-controls="kt_ecommerce_category_table" rowspan="1" colspan="1"
+                                aria-label="Category Type: activate to sort column ascending" aria-sort="descending">
+                                    الحالة </th>
 
-                                " style="width: 29.25px;">
-                                <div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-                                    <input class="form-check-input" style="display: none" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_ecommerce_category_table .form-check-input" value="1">
-                                </div>
-                            </th>
-
-                            <th class="min-w-250px sorting" tabindex="0" aria-controls="kt_ecommerce_category_table" rowspan="1" colspan="1" aria-label="العميل: activate to sort column ascending" > العميل</th>
-
-                                <th class="text-end min-w-70px sorting sorting_desc" tabindex="0" aria-controls="kt_ecommerce_category_table" rowspan="1" colspan="1" aria-label="Category Type: activate to sort column ascending" aria-sort="descending" > كود العميل</th>
-                                <th class="text-end min-w-70px">العنوان </th>
-                                <th class="text-end min-w-70px sorting sorting_desc" tabindex="0" aria-controls="kt_ecommerce_category_table" rowspan="1" colspan="1" aria-label="Category Type: activate to sort column ascending" aria-sort="descending" >موبايل</th>
+                                <th class="text-end min-w-70px sorting sorting_desc" tabindex="0"
+                                    aria-controls="kt_ecommerce_category_table" rowspan="1" colspan="1"
+                                    aria-label="Category Type: activate to sort column ascending" aria-sort="descending">
+                                    العنوان </th>
+                                <th class="text-end min-w-100px sorting sorting_desc" tabindex="0"
+                                    aria-controls="kt_ecommerce_category_table" rowspan="1" colspan="1"
+                                    aria-label="Category Type: activate to sort column ascending" aria-sort="descending">
+                                    موبايل</th>
                                 <th class="text-end min-w-70px">بريد الكتروني</th>
-                                <th class="text-end min-w-70px sorting sorting_desc" tabindex="0" aria-controls="kt_ecommerce_category_table" rowspan="1" colspan="1" aria-label="Category Type: activate to sort column ascending" aria-sort="descending" >الحالة </th>
-                                <th class="text-end min-w-70px">تفاصيل</th>
-                                <th class="text-end min-w-70px">تعديل </th>
-                                <th class="text-end min-w-70px">حذف</th>
+                                <th class="text-end min-w-70px pe-2 sorting_disabled">تفاصيل</th>
+                                <th class="text-end min-w-70px pe-2 sorting_disabled">تعديل </th>
+                                <th class="text-end min-w-70px pe-2 sorting_disabled">حذف</th>
                             </tr>
                             <!--end::Table row-->
                         </thead>
@@ -114,7 +137,8 @@
                                     <!--begin::Checkbox-->
                                     <td>
                                         <div class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" style="display: none" type="checkbox" value="1" />
+                                            <input class="form-check-input" style="display: none" type="checkbox"
+                                                value="1" />
                                         </div>
                                     </td>
                                     <!--end::Checkbox-->
@@ -125,9 +149,13 @@
                                             <div class="ms-5">
                                                 <!--begin::Title-->
 
-                                                <a href="#" class="text-gray-800 text-hover-primary fs-5 fw-bolder mb-1"
-                    data-kt-ecommerce-category-filter="category_name" style="display: none" > {{ $row->name ?? '' }}</a>
+                                                <a href="#"
+                                                    class="text-gray-800 text-hover-primary fs-5 fw-bolder mb-1"
+                                                    data-kt-ecommerce-category-filter="category_name"
+                                                    style="display: none">  {{ $row->name ?? '' }}</a>
                                                 <span class="fw-bolder ms-3"> {{ $row->name ?? '' }} </span>
+                                                <input type="hidden" name="" id=""
+                                                data-kt-ecommerce-category-filter="category_id" value="{{ $row->id }}">
                                                 <!--end::Title-->
                                             </div>
                                         </div>
@@ -136,31 +164,15 @@
 
                                     <!--end::SKU=-->
                                     <!--begin::Qty=-->
-                                    <td class="sorting_1">
+                                    <td class="text-end ">
                                         <!--begin::Badges-->
-                                        <input type="hidden" name="" id=""
-                                        data-kt-ecommerce-category-filter="category_id" value="{{ $row->id }}">
+
                                         <div class="badge badge-light-primary">{{ $row->code }}</div>
                                         <!--end::Badges-->
                                     </td>
-                                    <!--end::Qty=-->
-                                    <td class="text-end pe-0" >
+                                    <td class="text-end ">
                                         <span class="fw-bolder ms-3">
-                                            {{ $row->address ?? '' }}
-                                        </span>
-                                    </td>
-                                    <td class="text-end pe-0 sorting_1" >
-                                        <span class="fw-bolder ms-3">
-                                            {{ $row->mobile ?? '' }}
-                                        </span>
-                                    </td>
-                                    <td class="text-end pe-0" >
-                                        <span class="fw-bolder ms-3">
-                                            {{ $row->email ?? '' }}
-                                        </span>
-                                    </td>
-                                    <td class="text-end pe-0 sorting_1" >
-                                        <span class="fw-bolder ms-3">
+                                            {{-- {{ $row->status }} --}}
                                             @if ($row->status == '1')
                                                 فعال
                                             @else
@@ -168,16 +180,34 @@
                                             @endif
                                         </span>
                                     </td>
-                                    <td class="text-end pe-0" >
+                                    <!--end::Qty=-->
+                                    <td class="text-end pe-0">
+                                        <span class="fw-bolder ms-3">
+                                            {{ $row->address ?? '' }}
+                                        </span>
+                                    </td>
+                                    <td class="text-end pe-0 sorting_1">
+                                        <span class="fw-bolder ms-3">
+                                            {{ $row->mobile ?? '' }}
+                                        </span>
+                                    </td>
+                                    <td class="text-end pe-0">
+                                        <span class="fw-bolder ms-3">
+                                            {{ $row->email ?? '' }}
+                                        </span>
+                                    </td>
+
+                                    <td class="text-end pe-0">
 
                                         <a data-bs-toggle="modal"
                                             data-bs-target="#kt_modal_new_targetEdit{{ $row->id }}"
                                             class="menu-link px-3">عرض</a>
                                     </td>
-                                    <td class="text-end pe-0" >
-                                        <a href="{{ route('customers.edit', $row->id) }}" class="menu-link px-3">تعديل</a>
+                                    <td class="text-end pe-0">
+                                        <a href="{{ route('customers.edit', $row->id) }}"
+                                            class="menu-link px-3">تعديل</a>
                                     </td>
-                                    <td class="text-end pe-0" >
+                                    <td class="text-end pe-0">
                                         <a href="#" class="menu-link px-3"
                                             data-kt-ecommerce-category-filter="delete_row">حذف</a>
 

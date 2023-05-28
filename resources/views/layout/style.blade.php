@@ -48,6 +48,6 @@
 
          </style>
 
-
+@yield('add-style')
 
 

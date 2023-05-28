@@ -25,4 +25,9 @@ class Customer extends Model
         'email2',
         'status',
     ];
+
+    public function city()
+    {
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }

@@ -75,9 +75,9 @@ class CustomerController extends Controller
         if ($max) {
             $counter = (int)\Str::after($max['code'], '-') + 1;
 
-            $max = 'co' . '-' . str_pad($counter, 2, '0', STR_PAD_LEFT);
+            $max = 'CU'. str_pad($counter, 2, '0', STR_PAD_LEFT);
         } else {
-          $max = "co-01";
+          $max = "CU01";
         }
 
 
